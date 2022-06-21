@@ -36,7 +36,7 @@ const { developmentChains } = require("../../helper-hardhat-config");
                       "You need to spend more ETH!"
                   );
               });
-              // we could be even more precise here by making sure exactly $50 works
+              // we could be even more precise FundMehere by making sure exactly $50 works
               // but this is good enough for now
               it("Updates the amount funded data structure", async () => {
                   await fundMe.fund({ value: sendValue });

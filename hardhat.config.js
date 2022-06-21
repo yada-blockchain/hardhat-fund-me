@@ -14,7 +14,7 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 module.exports = {
     defaultNetwork: "hardhat",
     solidity: {
-        compilers: [{ version: "0.8.12" }, { version: "0.6.6" }],
+        compilers: [{ version: "0.8.8" }, { version: "0.6.6" }],
     },
     networks: {
         rinkeby: {
@@ -33,5 +33,11 @@ module.exports = {
     },
     etherscan: {
         apiKey: ETHERSCAN_API_KEY,
+    },
+    namedAccounts: {
+        deployer: {
+            default: 0,
+            1: 0,
+        },
     },
 };
