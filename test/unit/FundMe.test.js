@@ -13,6 +13,7 @@ const { developmentChains } = require("../../helper-hardhat-config");
               // const accounts = await ethers.getSigners()
               // deployer = accounts[0]
               deployer = (await getNamedAccounts()).deployer;
+              //Deploy our fundMe contract using hardhat
               await deployments.fixture(["all"]);
               fundMe = await ethers.getContract("FundMe", deployer);
               mockV3Aggregator = await ethers.getContract(
@@ -142,6 +143,13 @@ const { developmentChains } = require("../../helper-hardhat-config");
                   await expect(
                       fundMeConnectedContract.withdraw()
                   ).to.be.revertedWith("FundMe__NotOwner");
+              });
+          });
+
+          describe("DEBUG TEST", () => {
+              it("adresseTest", async () => {
+                  console.log(`Fundme address: ${fundMe.address}`);
+                  console.log(`Deployer address: ${deployer}`);
               });
           });
       });
